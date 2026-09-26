@@ -1,0 +1,22 @@
+# Template de produção: todos os segredos devem vir de variáveis de ambiente.
+# Nunca commitar valores reais neste arquivo.
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USER}
+    password: ${DATABASE_PASSWORD}
+    hikari:
+      maximum-pool-size: ${DB_POOL_SIZE:20}
+
+  jpa:
+    show-sql: false
+
+app:
+  jwt:
+    secret: ${JWT_SECRET}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:120}
+
+logging:
+  level:
+    root: INFO
+    com.biciclo: INFO

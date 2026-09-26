@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    # Banco PostgreSQL com a extensão PostGIS habilitada (ver db/migration/V1__init.sql).
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/biciclo}
+    username: ${DATABASE_USER:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    hikari:
+      maximum-pool-size: 10
+
+  jpa:
+    show-sql: true
+
+logging:
+  level:
+    com.biciclo: DEBUG
+    org.hibernate.SQL: DEBUG
